@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颜色变化</title>
+    <style>
+        div{outline-style: solid;width: 70%;height: 70%;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgb(255, 255, 255);}
+    </style>
+</head>
+<body>
+    <button id="inToOutBtn">从里向外</button>
+    <button id="outToInBtn">从外向里</button>
+    <div>0
+        <div>1
+            <div>2
+                <div>3
+                    <div>4
+                        <div>5
+                            <div>6
+                                <div>7</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var inToOut = document.getElementById("inToOutBtn");
+        var outToIn = document.getElementById("outToInBtn");
+        var boxs =document.getElementsByTagName("div");
+        inToOut.onclick=function(){
+            for(var i=0;i<boxs.length-1;i++){
+                boxs[i].style.backgroundColor=boxs[i+1].style.backgroundColor;
+            }
+            boxs[boxs.length-1].style.backgroundColor = randomColor();     
+        }
+        outToIn.onclick=function(){
+            for(var i=boxs.length-1;i>0;i--){
+                boxs[i].style.backgroundColor=boxs[i-1].style.backgroundColor;
+            }
+            boxs[0].style.backgroundColor = randomColor();
+        }
+
+        // 随机颜色
+        function randomColor(){
+            var r = Math.floor(Math.random() * 254);
+            var g = Math.floor(Math.random() * 254);
+            var b = Math.floor(Math.random() * 254);
+            return "rgb(" + r + "," + g + "," + b + ")";
+        }
+    </script>
+</body>
+</html>
