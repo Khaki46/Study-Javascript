@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计时器</title>
+    <style>
+        img{width: 300px;height: 420px;display: block;}
+        li{display: inline;}
+    </style>
+</head>
+<body>
+    <button>清除</button>
+    <p>计时</p>
+    <img src="img/1.png" alt="">
+    <ol>
+        <li><button>上一张</button></li>
+        <li><button>下一张</button></li>
+        <li><button>自动转换</button></li>
+        <li><button>停止</button></li>
+    </ol>
+    <script>
+        var index = 0;
+        var textp=document.getElementsByTagName("p")[0];
+        function fn(){
+            ++index;
+            textp.innerHTML=index;
+            console.log(index);
+        }
+        var Timer=setInterval(fn,1000);
+
+        var btn = document.getElementsByTagName("button");
+
+        btn[0].onclick = function(){
+        // 停止计时器
+            clearInterval(Timer);
+            if(textp){
+                document.body.removeChild(textp);
+            }
+        }
+
+        var imgs = ["1.png","2.png","3.png","4.png"];
+        var img = document.getElementsByTagName("img")[0];
+        var previous = document.getElementsByTagName("button")[1];
+        var next = document.getElementsByTagName("button")[2];
+        var auto = document.getElementsByTagName("button")[3];
+        var stopImg = document.getElementsByTagName("button")[4];
+
+        var num = 0;
+        previous.onclick=function(){
+            changeImg(-1);
+
+        };
+        next.onclick=function(){
+            changeImg(1);
+        }
+        function changeImg (i){
+            num+= i;
+            num = num < 0 ? imgs.length-1:num;
+            num = num > imgs.length-1 ? 0:num;
+            console.log(num);
+            img.src = 'img/' + imgs[num];
+        }
+        var timerImg;
+        auto.onclick = function(){
+            timerImg = setInterval(() => {
+            ++num;
+            num = num > imgs.length-1 ? 0 : num;
+            img.src = 'img/' + imgs[num];
+        }, 1000);
+        // =>箭头函数
+        // timerImg = setInterval(function(){
+        //     ++num;
+        //     num = num > imgs.length-1 ? 0 : num;
+        //     img.src = 'img/' + imgs[num];
+        // },1000)
+        }
+        stopImg.onclick = function(){
+            clearInterval(timerImg);
+        }
+    </script>
+</body>
+</html>
