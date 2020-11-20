@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无聊的方块循环运动</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="box" id="idBox">
+        <div class="cube" id="idCube"></div>
+    </div>
+    <script>
+        var cube = document.getElementById("idCube");
+        var box = document.getElementById("idBox");
+        var onLeft=0;
+        var onTop=0;
+        var onRight=450;
+        var onBottom=450;
+        setInterval(function(){
+            onLeft +=1;
+            cube.style.left = onLeft +'px';
+            if(onLeft>=450){
+                onLeft = 449;
+                onTop+=1;
+                cube.style.top = onTop +'px';
+                if(onTop>=450){
+                    onTop=449;
+                    onRight+=-1;
+                    cube.style.left = onRight +'px';
+                    if(onRight<=0){
+                        onRight=1;
+                        onBottom+=-1;
+                        cube.style.top = onBottom+'px';
+                        if(onBottom<=0){
+                            onLeft=0;
+                            onTop=0;
+                            onRight=450;
+                            onBottom=450;
+                        }
+                    }
+                }
+            }
+        },5);                 
+    </script>
+</body>
+</html>
