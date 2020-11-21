@@ -8,7 +8,9 @@
         img{left: 0px;width: 300px;height: 420px;}
         li{display: inline;}
         .box{width: 300px;height: 420px;overflow: hidden;position: relative;}
+        .boxAutoMove{width: 300px;height: 420px;overflow: hidden;position: relative;}
         .content{width: 1600px;overflow: hidden;left: 0px;transition: 1s;position: absolute;}
+        .boxAutoMoveCentent{width: 1550px;overflow: hidden;position: absolute;}
     </style>
 </head>
 <body>
@@ -39,13 +41,23 @@
             <li><button>第四张</button></li>
         </ol>
     </div>
+    <div class="boxAutoMove" id="boxAutoMove">
+        <div class="boxAutoMoveCentent" id="boxAutoMoveCentent">
+            <img src="img/1.png" alt="">
+            <img src="img/2.png" alt="">
+            <img src="img/3.png" alt="">
+            <img src="img/4.png" alt="">
+            <!-- 第一张图片 -->
+            <img src="img/1.png" alt="">
+        </div>
+    </div>
     <script>
-        var index = 0;
+        var nums = 0;
         var textp=document.getElementsByTagName("p")[0];
         function fn(){
-            ++index;
-            textp.innerHTML=index;
-            console.log(index);
+            ++nums;
+            textp.innerHTML=nums;
+            console.log("nums:"+nums);
         }
         var Timer=setInterval(fn,1000);
 
@@ -101,12 +113,21 @@
 // 点击按钮切换照片
         var btnSw = document.getElementsByTagName("button");
         var content = document.getElementById("content");
+        var boxAutoMoveCentent = document.getElementById("boxAutoMoveCentent");
+        var movePx = 0;
         for(var i = 5;i<btn.length;i++){
             btnSw[i].index=i-5;
             btnSw[i].onclick=function(){
                 content.style.left=-305 * this.index +'px';
             }
-        }
+        } 
+// 自动滚动
+            setInterval(function(){
+                movePx-=2;
+                movePx = movePx <= -1220 ? 0 : movePx;
+                console.log(movePx);
+                boxAutoMoveCentent.style.left=movePx +'px';
+            },10)
     </script>
 </body>
 </html>
