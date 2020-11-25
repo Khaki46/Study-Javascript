@@ -1,0 +1,16 @@
+table,tr,td{
+    border: 1px solid gray;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate; 
+    border-spacing: 10px;
+    background-color: rgb(59, 235, 220);
+}
+td{
+    width: 80px;
+    height: 80px;
+    background-color: rgb(163, 238, 232);
+}
+.box{
+
+}
