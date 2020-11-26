@@ -1,0 +1,19 @@
+body{margin: 0%;}
+.sideNav{height: 100%;
+        width: 180px;
+        position: fixed;
+        background-color: aqua;
+        top: 0px;
+        left: 0px;
+        transition: all 1s;
+    }
+.sideNav span{background-color: aquamarine;
+            display: flex;
+            width: 20px;
+            height: 50px;
+            line-height: 50px;
+            position: absolute;
+            left: 180px;
+            top: 50%;
+            border-radius: 0px 5px 5px 0px;
+        }
