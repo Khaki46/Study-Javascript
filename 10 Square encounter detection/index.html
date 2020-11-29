@@ -4,28 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Square encounter detection</title>
-    <style>
-        .cube1{
-            background-color: aqua;
-            width: 60px;
-            height: 60px;
-            position: absolute;
-            top: 100px;
-            left: 200px;
-        }
-        .cube2{
-            background-color: aquamarine;
-            width: 80px;
-            height: 80px;
-            position: absolute;
-            top: 200px;
-            left: 400px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="cube1" class="cube1"></div>
-    <div id="cube2" class="cube2"></div>
-    <script src="script.js"></script>
+    <div id="box" class="box">
+        <div id="cube1" class="cube1"></div>
+        <div id="cube2" class="cube2"></div>
+    </div>
+
+    <div id="box2" class="box2">
+        <div id="moveBall" class="moveBall"></div>
+        <div id="fixedBall" class="ball2"></div>
+        <div id="fixedBall" class="ball3"></div>
+        <div id="fixedBall" class="ball4"></div>
+        <div id="fixedBall" class="ball5"></div>
+        <div id="fixedBall" class="ball6"></div>
+        <div id="fixedBall" class="ball7"></div>
+    </div>
+    <script src="cubeOfBox.js"></script>
+    <script src="ballOfBox2.js"></script>
 </body>
 </html>

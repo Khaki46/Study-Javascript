@@ -1,0 +1,85 @@
+.box{
+    width: 100%;
+    height: 500px;
+    border: 1px solid black;
+    overflow: hidden;
+    position: relative;
+}
+.cube1{
+    background-color: aqua;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+.cube2{
+    background-color: aquamarine;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 250px;
+    left: 250px;
+}
+.box2{
+    width: 100%;
+    height: 500px;
+    border: 1px solid black;
+    overflow: hidden;
+    position: relative;
+    top: 10px;
+}
+.moveBall{
+    background-color: antiquewhite;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+}
+.ball2{
+    background-color: rgb(166, 219, 166);
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 150px;
+    top: 150px;
+}
+.ball3{
+    background-color: rgb(131, 218, 224);
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 360px;
+    top: 360px;
+}
+.ball4{
+    background-color: rgb(219, 166, 216);
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 600px;
+    top: 200px;
+}
+.ball5{
+    background-color: rgb(240, 157, 157);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 700px;
+    top: 100px;
+}
+.ball6{
+    background-color: rgb(60, 218, 218);
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 830px;
+    top: 250px;
+}
+.ball7{
+    background-color: rgb(61, 64, 240);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 1200px;
+    top: 350px;
+}

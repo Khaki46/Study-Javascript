@@ -1,13 +1,13 @@
 var cube1 = document.getElementById("cube1");
 var cube2 = document.getElementById("cube2");
 
-cube1.onmousedown = function(ev){
+cube1.onmousedown = function(){
     var ev = ev || event;
 
     var cube1OfLeft = ev.clientX - this.offsetLeft;
     var cube1OfTop = ev.clientY - this.offsetTop;
 
-    document.onmousemove = function(ev){
+    document.onmousemove = function(){
         var ev = ev || event;
 
         cube1.style.left = ev.clientX - cube1OfLeft + 'px';
