@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess the number game</title>
+    <style>
+        .startGameBtn{display: none;}
+    </style>
 </head>
 <body>
-    <p>刚刚随机生成了一个100以内的数字，猜出这个数字是什么，你有十次机会，每次你猜后我会告诉你结果过高还是过低。</p>
-    输入数字：<input type="text" id="edNum">
-    <button id="btn">确定</button>
-    <p ></p>
+    <p>刚刚随机生成了一个100以内的整字，猜出这个数字是什么，你有十次机会，每次你猜后我会告诉你结果过高还是过低。</p>
+    输入数字：<input type="text" id="enterNum">
+    <button id="btn">确定</button><span></span>
+    <p>你猜过的数字：<span></span></p>
+    <p id="result" class="result"></p>
+    <p id="prompt"></p>
+    <button class="startGameBtn" id="startGameBtn">开始游戏</button>
     <script src="script.js"></script>
 </body>
 </html>
