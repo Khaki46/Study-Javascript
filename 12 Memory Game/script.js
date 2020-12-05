@@ -1,3 +1,5 @@
+window.onload=function(){
+
 const imgArr=[
     {
         name:'1',
@@ -64,10 +66,17 @@ function detect(){
         cardArr[0].setAttribute('src','img/close.png');
         cardArr[1].setAttribute('src','img/close.png');
     }else if(cardId[0]===cardId[1]){
+
         cardArr[0].setAttribute('src','img/open.png');
         cardArr[1].setAttribute('src','img/open.png');
-        cardArr[0].removeEventListener('click', test)
-        cardArr[1].removeEventListener('click', test)
+        cardArr[0].addEventListener('click', doneChangePhoto);
+        cardArr[1].addEventListener('click', doneChangePhoto);
+        function doneChangePhoto(){
+            cardArr[0].setAttribute('src','img/open.png');
+            cardArr[1].setAttribute('src','img/open.png');
+        }
+        console.log(cardArr[0]);
+        console.log(cardArr[1]);
         }else{
         cardArr[0].setAttribute('src','img/close.png');
         cardArr[1].setAttribute('src','img/close.png');
@@ -81,7 +90,7 @@ for (let i = 0; i < img.length; i++) {
     console.log(imgArr[i]);
     img[i].addEventListener('click',flipCard);
     function flipCard(){
-        
+
         img[i].setAttribute('src',imgArr[i].img)
         img[i].index=i;
         imgIdArr.push(this.index);
@@ -91,5 +100,7 @@ for (let i = 0; i < img.length; i++) {
             setTimeout(detect, 300);
         }
     }
+}
+
 }
 
