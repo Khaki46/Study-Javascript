@@ -101,6 +101,5 @@ for (let i = 0; i < img.length; i++) {
         }
     }
 }
-
 }
 
