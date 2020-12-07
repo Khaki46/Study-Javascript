@@ -56,6 +56,7 @@ let switchTF ;
 let cardId = [];
 let cardArr = [];
 let imgIdArr = [];
+let addNum = 0;
 function detect(){
     var cards = document.querySelectorAll('img');
     const cardArrOne = imgIdArr[0];
@@ -71,9 +72,14 @@ function detect(){
         cardArr[1].setAttribute('src','img/open.png');
         cardArr[0].addEventListener('click', doneChangePhoto);
         cardArr[1].addEventListener('click', doneChangePhoto);
+        addNum+=1;
+
         function doneChangePhoto(){
             cardArr[0].setAttribute('src','img/open.png');
             cardArr[1].setAttribute('src','img/open.png');
+        }
+        if(addNum==6){
+            document.querySelector('h1').style.display='block';
         }
         console.log(cardArr[0]);
         console.log(cardArr[1]);

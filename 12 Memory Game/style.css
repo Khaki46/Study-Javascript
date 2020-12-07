@@ -10,3 +10,7 @@
       width: 150px;
       height: 200px;
 }
+h1{
+  display: none;
+  text-align: center;
+}
