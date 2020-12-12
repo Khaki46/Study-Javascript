@@ -1,4 +1,4 @@
-
+window.onload=function(){
 
 const imgArr=[
     {
@@ -50,7 +50,6 @@ const imgArr=[
         img:'img/6.png'
     }
 ]
-window.onload=function(){
 imgArr.sort(function(){return 0.5-Math.random();});
 const img = document.getElementsByTagName('img');
 let switchTF ;
@@ -71,10 +70,8 @@ function detect(){
         addNum+=1;
         cardArr[0].setAttribute('src','img/open.png');
         cardArr[1].setAttribute('src','img/open.png');
-        // Ban img click
-        cardArr[0].setAttribute('style','pointer-events:none');
-        cardArr[1].setAttribute('style','pointer-events:none');
-
+        cardArr[0].setAttribute('style','pointer-events:none')
+        cardArr[1].setAttribute('style','pointer-events:none')
         if(addNum==6){
             document.querySelector('h1').style.display='block';
         }
@@ -92,9 +89,8 @@ function detect(){
 for (let i = 0; i < img.length; i++) {
     console.log(imgArr[i]);
     img[i].addEventListener('click',flipCard);
-    
-
     function flipCard(){
+
         img[i].setAttribute('src',imgArr[i].img)
         img[i].index=i;
         imgIdArr.push(this.index);
