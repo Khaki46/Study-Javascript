@@ -52,7 +52,6 @@ const imgArr=[
 ]
 imgArr.sort(function(){return 0.5-Math.random();});
 const img = document.getElementsByTagName('img');
-let switchTF ;
 let cardId = [];
 let cardArr = [];
 let imgIdArr = [];
