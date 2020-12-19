@@ -1,6 +1,13 @@
 document.addEventListener('DOMContentLoaded',() =>{
 
-const dino = document.querySelector('.dino');
+const dino = document.getElementById('dino');
+
+function jump() {
+    dino.classList.add("jump");
+    setTimeout(() => {
+        dino.classList.remove("jump");
+    }, 600);
+    }
 
 function control(e) {
     if(e.keyCode===32){
@@ -8,23 +15,6 @@ function control(e) {
         jump();
     }
 }
-document.addEventListener('keyup',control);
+document.addEventListener('keydown',control);
 
-function jump() {
-    let position = 0;
-    let timerUp=setInterval(() => {
-        position+=5;
-        dino.style.bottom = position + 'px';
-            if(position===150){
-                clearInterval(timerUp);
-                let timerDown=setInterval(() => {
-                    position-=5;
-                    dino.style.bottom = position + 'px';
-                    if(position===0){
-                        clearInterval(timerDown);
-                    }
-                }, 20);
-            }
-        }, 20);
-    }
 })
