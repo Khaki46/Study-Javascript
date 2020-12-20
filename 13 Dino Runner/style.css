@@ -15,6 +15,7 @@
 .jump{
     animation: jump 0.6s linear;
 }
+/* 恐龙向上跳动画 */
 @keyframes jump{
     0%{
         top: 150px;
@@ -33,6 +34,12 @@
         top: 150px;
     }
 }
+.down{
+    width: 45px;
+    height: 25px;
+    position: relative;
+    top: 150px;
+}
 #ground{
     /* 地面图片宽度为1200px */
     width: 2415px;
@@ -42,12 +49,85 @@
     left: 0px;
     animation:  cycle 10s linear infinite;
 }
-/* 图片无限循环播放 */
+/* 图片无限循环动画 */
 @keyframes cycle{
     0%{
         left: 0px;
     }
     100%{
         left: -1200px;
+    }
+}
+#cactus{
+    width: 25px;
+    height: 50px;
+    position: relative;
+    top: 80px;
+    left: 750px;
+
+    animation: obstacle 2s linear infinite;
+}
+/* 仙人掌出现动画 */
+@keyframes obstacle{
+    0%{
+        left: 780px
+    }
+    100%{
+        left: -20px
+
+    }
+}
+#cloud1{
+    width: 50px;
+    height: 18px;
+    position: relative;
+    top: -80px;
+    left: 780px;
+
+    animation: cloud1 20s linear infinite;
+}
+@keyframes cloud1{
+    0%{
+        left: 780px
+    }
+    100%{
+        left: -200px
+
+    }
+}
+#cloud2{
+    width: 50px;
+    height: 18px;
+    position: relative;
+    top: -55px;
+    left: 900px;
+
+    animation: cloud2 20s linear infinite;
+}
+@keyframes cloud2{
+    0%{
+        left: 900px
+    }
+    100%{
+        left: -200px
+
+    }
+}
+#cloud3{
+    width: 50px;
+    height: 18px;
+    position: relative;
+    top: -35px;
+    left: 1500px;
+
+    animation: cloud3 25s linear infinite;
+}
+@keyframes cloud3{
+    0%{
+        left: 1500px
+    }
+    100%{
+        left: -200px
+
     }
 }
