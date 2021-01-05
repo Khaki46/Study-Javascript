@@ -71,7 +71,7 @@ function dinoGoFun2(){
 
     let dinoGo1=setInterval(dinoGoFun1, 100);
     let dinoGo2=setInterval(dinoGoFun2, 200);
-
+// 更换仙人掌图片
 setInterval(() => {
     let num=Math.floor(Math.random()*10); 
     console.log(num);
