@@ -63,14 +63,16 @@
     height: 50px;
     position: relative;
     top: 80px;
-    left: 750px;
-
+    left: 800px;
     animation: obstacle 2s linear infinite;
 }
+/* .cactusShow{
+    animation: obstacle 2s linear infinite;
+} */
 /* 仙人掌出现动画 */
 @keyframes obstacle{
     0%{
-        left: 780px
+        left: 830px
     }
     100%{
         left: -20px

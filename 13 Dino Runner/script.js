@@ -3,6 +3,8 @@
 const dino = document.getElementById('dino');
 const dinoImg = dino.querySelector('img');
 const cactus = document.getElementById('cactus');
+const cactusImg = cactus.querySelector('img');
+
 let dinoTF=true;
 function jump() {
 
@@ -42,7 +44,8 @@ let dinoAlive = setInterval(() => {
     // 获得仙人掌宽度距离
     let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
     if(cactusLeft<45 && cactusLeft>0 && dinoTop>=100){
-        console.log("good");
+        // console.log("good");
+        alert('you die!');
     }
     if(dinoTop<140){
         dinoImg.setAttribute('src','img/dino.png');
@@ -69,5 +72,17 @@ function dinoGoFun2(){
     let dinoGo1=setInterval(dinoGoFun1, 100);
     let dinoGo2=setInterval(dinoGoFun2, 200);
 
+setInterval(() => {
+    let num=Math.floor(Math.random()*10); 
+    console.log(num);
+    if(num<=3){
+        cactusImg.setAttribute('src','img/cactus2.png')
+    }else if(3<num<=6){
+        cactusImg.setAttribute('src','img/cactus3.png')
+    }else if(6<num<=10){
 
+        cactusImg.setAttribute('src','img/cactus4.png')
+
+    }
+}, 2000);
 // })
