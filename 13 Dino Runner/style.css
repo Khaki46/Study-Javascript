@@ -1,10 +1,16 @@
 .box{
     width: 800px;
     height: 200px;
-    border: 1px black solid;
     margin: auto;
     overflow: hidden;
 
+}
+#boxScore{
+    width: 100%;
+}
+#score{
+    margin: auto;
+    width: 100px;
 }
 #dino{
     width: 45px;
@@ -64,11 +70,10 @@
     position: relative;
     top: 80px;
     left: 800px;
+}
+.cactusShow{
     animation: obstacle 2s linear infinite;
 }
-/* .cactusShow{
-    animation: obstacle 2s linear infinite;
-} */
 /* 仙人掌出现动画 */
 @keyframes obstacle{
     0%{
@@ -77,6 +82,25 @@
     100%{
         left: -20px
 
+    }
+}
+#bird{
+    width: 50px;
+    height: 40px;
+    position: relative;
+    left: 800px;
+    top: 5px;
+
+}
+.birdShow{
+    animation: birdFly 2s linear infinite;
+}
+@keyframes birdFly{
+    0%{
+        left: 830px;
+    }
+    100%{
+        left: -50px;
     }
 }
 #cloud1{
