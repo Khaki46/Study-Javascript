@@ -1,19 +1,55 @@
 table,tr,td{
-    border: 1px solid gray;
+    /* border: 0px solid gray; */
+    border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
     border-collapse: separate; 
-    border-spacing: 10px;
-    background-color: rgb(59, 235, 220);
+    border-spacing: 15px;
+    background-color: rgb(57, 231, 217);
 }
 td{
     width: 80px;
     height: 80px;
+    border-radius: 0px;
     text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: bold;
     font-size: 24px;
     background-color: rgb(163, 238, 232);
 }
-.box{
-
+.td2{
+    background-color: rgb(233, 235, 154);
+}
+.td4{
+    background-color: rgb(245, 206, 156);
+}
+.td8{
+    background-color: rgb(224, 141, 115);
+}
+.td16{
+    background-color: rgb(64, 192, 85);
+}
+.td32{
+    background-color: rgb(115, 122, 224);
+}
+.td64{
+    background-color: rgb(217, 224, 115);
+}
+.td128{
+    background-color: rgb(206, 115, 224);
+}
+.td256{
+    background-color: rgb(38, 230, 150);
+}
+.td512{
+    background-color: rgb(115, 171, 224);
+}
+.td1024{
+    background-color: rgb(158, 224, 115);
+}
+.td2048{
+    background-color: rgb(224, 115, 115);
+}
+.td4096{
+    background-color: rgb(115, 117, 224);
 }
