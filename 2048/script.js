@@ -2,7 +2,7 @@ let td = document.querySelectorAll('td');
 const widthNum=4;
 let numArr = [];
 let score = 0;
-let checkMove = true;
+let checkMove = false;
 function createBoard() {
     for (const iterator of td) {
         iterator.innerHTML = 0;
@@ -19,7 +19,7 @@ function getRandomText() {
     let random = Math.floor(Math.random() * (max - min + 1)) + min;
     if (td[random].innerHTML == 0) {
         td[random].innerHTML = 2;
-        checkForGameOver();
+        // checkForGameOver();
     } else {
         getRandomText();
     }
@@ -43,7 +43,7 @@ function moveRight() {
             numArr[index].innerHTML = newRow[0];
             numArr[index+1].innerHTML = newRow[1];
             numArr[index+2].innerHTML = newRow[2];
-            numArr[index+3].innerHTML = newRow[3];
+            numArr[index + 3].innerHTML = newRow[3];
         }
     }
 }
@@ -107,52 +107,61 @@ function moveBottom() {
     }
 }
 function combineRow() {
-    for (let i =0; i < 15; i++) {
+    checkMove = true;
+
+    for (let i = 0; i < 15; i++) {
         if (numArr[i].innerHTML === numArr[i + 1].innerHTML) {
-            let combinedTotal = parseInt(numArr[i].innerHTML) + parseInt(numArr[i + 1].innerHTML)
-            numArr[i].innerHTML = combinedTotal  
-            numArr[i + 1].innerHTML = 0      
-            score += combinedTotal
-            checkMove = true;
+            let combinedTotal = parseInt(numArr[i].innerHTML) + parseInt(numArr[i + 1].innerHTML);
+            numArr[i].innerHTML = combinedTotal;
+            numArr[i + 1].innerHTML = 0;
+            score += combinedTotal;
         } else {
-            checkMove = false;
+            // checkMove = false;
         }
     }
 }
 function combineColumn() {
-    for (let i =0; i < 12; i++) {
+
+    checkMove = true;
+    for (let i = 0; i < 12; i++) {
         if (numArr[i].innerHTML === numArr[i +widthNum].innerHTML) {
-            let combinedTotal = parseInt(numArr[i].innerHTML) + parseInt(numArr[i +widthNum].innerHTML)
-            numArr[i].innerHTML = combinedTotal
-            numArr[i +widthNum].innerHTML = 0
-            score += combinedTotal
-            checkMove = true;
+            let combinedTotal = parseInt(numArr[i].innerHTML) + parseInt(numArr[i +widthNum].innerHTML);
+            numArr[i].innerHTML = combinedTotal;
+            numArr[i +widthNum].innerHTML = 0;
+            score += combinedTotal;
         } else {
-            checkMove = false;
+            // checkMove = false;
         }
-        }
+    }
+}
+function addNewText() {
+    console.log(checkMove);
+    if (checkMove) {
+        getRandomText();
+        checkMove = false;
+    }
 }
 function keyOn(e) {
     if (e.key === "ArrowRight") {
         moveRight();
         combineRow();
         moveRight();
-        getRandomText();
+        addNewText();
     } else if (e.key === "ArrowLeft") {
         moveLeft();
         combineRow();
         moveLeft();
-        getRandomText();
+        addNewText();
     } else if (e.key === "ArrowUp") {
         moveTop();
         combineColumn();
         moveTop();
-        getRandomText();
+        addNewText();
     } else if (e.key === "ArrowDown") {
         moveBottom();
         combineColumn();
         moveBottom();
-        getRandomText();
+        addNewText();
     }
 }
 document.addEventListener('keydown', keyOn);
